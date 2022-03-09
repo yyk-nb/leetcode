@@ -1,0 +1,24 @@
+vector<int> twoSum(vector<int>& nums, int target) 
+{
+    // std::unordered_map <int,int> map;
+    // for(int i = 0; i < nums.size(); i++) {
+    //     auto iter = map.find(target - nums[i]);
+    //     if(iter != map.end()) {
+    //         return {iter->second, i};//找到了就直接return
+    //     }
+    //     map.insert(pair<int, int>(nums[i], i));//没有就插入
+    // }
+    // return {}; 哈希表思想 几个月之前看题解写的 现在完全忘了
+
+    for(int i = 0; i < nums.size(); i++)
+    {
+        for(int j = i + 1; j < nums.size(); j++)
+        {
+            if(nums[i] + nums[j] == target)
+            {
+                return {i, j};
+            }
+        }
+    }
+    return {};
+}
